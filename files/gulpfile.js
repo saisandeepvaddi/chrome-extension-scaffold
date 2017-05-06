@@ -1,6 +1,5 @@
 const gulp = require("gulp");
 const babel = require("gulp-babel");
-const es = require("event-stream");
 const plumber = require("gulp-plumber");
 const gutil = require("gulp-util");
 

@@ -1,17 +1,11 @@
 {
-  "name": "tinybook",
+  "name": "chrome-extension-scaffold",
   "version": "1.0.0",
-  "description": "A chrome web app for tiny notes",
+  "description": "A chrome web extension scaffolding",
   "main": "index.js",
   "scripts": {
   },
-  "keywords": [],
-  "author": "Sai Sandeep Vaddi <saisandeepvaddi@gmail.com>",
-  "license": "MIT",
-  "repository": "https://github.com/saisandeepvaddi/TinyBook.git",
   "devDependencies": {
-    "babel-cli": "6.24.1",
-    "event-stream": "3.3.4",
     "gulp": "3.9.1",
     "gulp-babel": "6.1.2",
     "gulp-plumber": "1.1.0",
