@@ -1,0 +1,33 @@
+{
+  "name": "chrome-extension-scaffold",
+  "version": "1.0.0",
+  "description": "A chrome extension scaffolding package",
+  "main": "index.js",
+  "bin": {
+    "chrome-extension-scaffold": "index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/saisandeepvaddi/chrome-extension-scaffold.git"
+  },
+  "keywords": [
+    "chrome",
+    "extension",
+    "scaffold",
+    "google",
+    "boilerplate"
+  ],
+  "author": "Sai Sandeep Vaddi <saisandeepvaddi@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/saisandeepvaddi/chrome-extension-scaffold/issues"
+  },
+  "homepage": "https://github.com/saisandeepvaddi/chrome-extension-scaffold#readme",
+  "dependencies": {
+    "fs-jetpack": "0.13.3",
+    "minimist": "1.2.0"
+  }
+}
