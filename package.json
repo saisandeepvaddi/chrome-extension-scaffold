@@ -1,6 +1,6 @@
 {
   "name": "chrome-extension-scaffold",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "A chrome extension scaffolding package",
   "main": "index.js",
   "bin": {
@@ -28,7 +28,6 @@
   "homepage": "https://github.com/saisandeepvaddi/chrome-extension-scaffold#readme",
   "dependencies": {
     "fs-jetpack": "0.13.3",
-    "minimist": "1.2.0",
     "prompt": "1.0.0"
   }
 }
