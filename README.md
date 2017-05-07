@@ -5,7 +5,7 @@ Compilation from ES6 and stage-2 is provided out of the box
 # Usage
 * You should have Node.js installed
 * Install gulp globally if you haven't yet
-  * ```$> npm install gulp -g```
+  * ```$> npm install gulp-cli -g```
 * Install this package globally.
   * ```$> npm install chrome-extension-scaffold -g```
 * Run. That's it. It will ask you details interactively
