@@ -67,9 +67,10 @@ prompt.get(schema, function(err, result) {
       };
       break;
   }
-  curated.permissions = result.permissions
-    .split(",")
-    .map(per => per.trim().toString());
+  perms = result.permissions;
+  if (perms.length > 0) {
+    curated.permissions = result.permissions.split(",").map(per => per.trim().toString());;
+  }
   let manifest = Object.assign({}, base_manifest, curated);
   manifestString = JSON.stringify(manifest, undefined, 2);
   jetpack.dir(result.name);
