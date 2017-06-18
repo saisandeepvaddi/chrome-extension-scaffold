@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 const path = require("path");
 const jetpack = require("fs-jetpack");
+const chalk = require("chalk");
 const cwd = process.cwd();
 const prompt = require("prompt");
 prompt.message = "";
@@ -21,22 +22,23 @@ let schema = {
     name: {
       name: "name",
       pattern: /^[a-zA-Z\s-]+$/,
-      message: "Name ? ",
+      description: chalk.bold.blue("Name ? "),
+      message: chalk.red("Name must have only a-z, A-Z, space, - "),
       default: "chrome-extension"
     },
     description: {
       name: "description",
-      message: "Description ?",
+      description: chalk.bold.green("Description ?"),
       default: "Description of extension"
     },
     action: {
       name: "action",
-      message: "1) Browser Action 2) Page Action",
+      description: chalk.bold.yellow("1) Browser Action 2) Page Action"),
       default: 1
     },
     permissions: {
       name: "permissions",
-      message: "Permissions (seperate with comma) ?"
+      description: chalk.bold.cyan("Permissions (seperate with comma) ?")
     }
   }
 };
@@ -69,7 +71,9 @@ prompt.get(schema, function(err, result) {
   }
   perms = result.permissions;
   if (perms.length > 0) {
-    curated.permissions = result.permissions.split(",").map(per => per.trim().toString());;
+    curated.permissions = result.permissions
+      .split(",")
+      .map(per => per.trim().toString());
   }
   let manifest = Object.assign({}, base_manifest, curated);
   manifestString = JSON.stringify(manifest, undefined, 2);
@@ -82,4 +86,12 @@ prompt.get(schema, function(err, result) {
   jetpack.file(path.resolve(cwd, result.name, "src", "manifest.json"), {
     content: manifestString
   });
+
+  console.log(
+    `
+    \t\t\t\t ${chalk.bold.white(" ✨  Boilerplate created ✨  ")} \n
+    ${chalk.blue(`cd ${curated.name} && npm install --only=dev`)}
+    ${chalk.blue(`gulp`)} \n
+  `
+  );
 });
