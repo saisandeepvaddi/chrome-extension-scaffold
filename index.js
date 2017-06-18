@@ -33,6 +33,8 @@ let schema = {
     },
     action: {
       name: "action",
+      pattern: /^[12]$/,
+      message: chalk.red("Choose only 1 or 2"),
       description: chalk.bold.yellow("1) Browser Action 2) Page Action"),
       default: 1
     },
