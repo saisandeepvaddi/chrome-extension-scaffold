@@ -11,7 +11,7 @@ Scaffolds out a Google Chrome extension with minimal structure.
 * Install gulp globally if you haven't yet  
   * ```$> npm install gulp-cli -g```  
 * Install this package globally.  
-  * ```$> npm install chrome-extension-scaffold -g  // Try sudo for linux environments if any issues```  
+  * ```$> npm install chrome-extension-scaffold -g   // Try sudo npm for linux environments if any issues in installation```  
 * Run. That's it. It will ask you details interactively  
   * ```$> chrome-extension-scaffold```  
 * CD to the directory created with your extension name and install dependencies. You need only dev dependencies  
