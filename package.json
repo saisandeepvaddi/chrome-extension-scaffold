@@ -1,6 +1,6 @@
 {
   "name": "chrome-extension-scaffold",
-  "version": "3.0.0",
+  "version": "4.0.0",
   "description": "A chrome extension scaffolding package",
   "main": "index.js",
   "bin": {

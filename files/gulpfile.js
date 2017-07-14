@@ -1,5 +1,5 @@
 const gulp = require("gulp");
-const babel = require("gulp-babel");
+// const babel = require("gulp-babel");
 const plumber = require("gulp-plumber");
 const gutil = require("gulp-util");
 const uglify = require("gulp-uglify");
@@ -11,7 +11,7 @@ const sass = require("gulp-sass");
 gulp.task(
   "default",
   [
-    "babel",
+    "js",
     "copy-html",
     "copy-css",
     "copy-sass",
@@ -25,17 +25,12 @@ gulp.task(
 );
 
 // For compiling from ES6 and other JS latest code
-gulp.task("babel", () => {
-  gutil.log("Gulp babel task executing");
+gulp.task("js", () => {
+  gutil.log("Gulp js task executing");
   return gulp
     .src("src/js/**/*.js")
     .pipe(sourcemaps.init())
     .pipe(plumber({ errorHandler: onError }))
-    .pipe(
-      babel({
-        presets: ["es2015", "stage-2"]
-      })
-    )
     .pipe(uglify())
     .pipe(sourcemaps.write())
     .pipe(gulp.dest("build"));
@@ -71,7 +66,7 @@ gulp.task("copy-css", () => {
 gulp.task("copy-sass", () => {
   gutil.log("Gulp copy-sass task executing");
   var scss = gulp
-    .src("src/styles/**/*.+(scss|sass)")
+    .src(["src/styles/**/*.scss", "src/styles/**/*.sass"])
     .pipe(sourcemaps.init())
     .pipe(plumber({ errorHandler: onError }))
     .pipe(sass())
@@ -107,11 +102,11 @@ gulp.task("copy-manifest", () => {
 gulp.task("watch", () => {
   gutil.log("Gulp is watching your files :- )");
   gulp.watch("src/styles/**/*.css", ["copy-css"]);
-  gulp.watch("src/styles/**/*.+(scss|sass)", ["copy-sass"]);
+  gulp.watch(["src/styles/**/*.scss", "src/styles/**/*.sass"], ["copy-sass"]);
   gulp.watch("src/html/*", ["copy-html"]);
   gulp.watch("src/icons/*", ["copy-icons"]);
   gulp.watch("src/manifest.json", ["copy-manifest"]);
-  gulp.watch("src/js/*.js", ["babel"]);
+  gulp.watch("src/js/*.js", ["js"]);
 });
 
 // An error function. Using this function will plumber will prevent gulp to crash when error occurs
