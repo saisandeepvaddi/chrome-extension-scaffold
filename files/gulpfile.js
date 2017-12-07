@@ -1,8 +1,6 @@
 const gulp = require("gulp");
-// const babel = require("gulp-babel");
 const plumber = require("gulp-plumber");
 const gutil = require("gulp-util");
-// const uglify = require("gulp-uglify");
 const uglify = require("gulp-uglify-es").default;
 const sourcemaps = require("gulp-sourcemaps");
 const uglifycss = require("gulp-uglifycss");
